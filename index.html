@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texts</title>
+</head>
+
+<body>
+<h1>Texts</h1>
+<form id="text-form">
+    <textarea id="text-input" placeholder="Enter your text here"></textarea>
+    <button type="submit">Submit</button>
+</form>
+<ul id="texts-list"></ul>
+<script>
+    const textForm = document.getElementById('text-form');
+    const textInput = document.getElementById('text-input');
+    const textsList = document.getElementById('texts-list');
+
+    function fetchTexts() {
+        fetch('/api/texts')
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then((texts) => {
+                textsList.innerHTML = '';
+                texts.forEach((text) => {
+                    const li = document.createElement('li');
+                    li.textContent = text.content;
+                    textsList.appendChild(li);
+                });
+            })
+            .catch((error) => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    }
+
+    textForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const content = textInput.value.trim();
+        if (!content) {
+            return;
+        }
+
+        fetch('/api/texts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({content}),
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                textInput.value = '';
+                fetchTexts();
+            })
+            .catch((error) => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    });
+
+    fetchTexts();
+</script>
+</body>
+</html>
