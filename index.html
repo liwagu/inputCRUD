@@ -19,8 +19,9 @@
     const textsList = document.getElementById('texts-list');
 
     function fetchTexts() {
-        fetch('/api/texts')
-            .then((response) => {
+        // fetch('/api/texts')
+        fetch('http://localhost:8080/api/texts')
+                .then((response) => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
@@ -46,7 +47,8 @@
             return;
         }
 
-        fetch('/api/texts', {
+        // fetch('/api/texts', {
+        fetch('http://localhost:8080/api/texts', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -27,6 +27,7 @@ func main() {
 	defer db.Close()
 
 	http.HandleFunc("/api/texts", textsHandler)
+	http.Handle("/", http.FileServer(http.Dir(".")))
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
