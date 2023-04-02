@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e4f2527-ad1e-4bbf-a56d-5bb4e7a1d7a7" name="变更" comment="add README">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="9e4f2527-ad1e-4bbf-a56d-5bb4e7a1d7a7" name="变更" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +20,9 @@
   <component name="GOROOT" url="file:///opt/homebrew/Cellar/go/1.20.2/libexec" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Dockerfile" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -123,7 +123,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix bug" />
     <MESSAGE value="add README" />
-    <option name="LAST_COMMIT_MESSAGE" value="add README" />
+    <MESSAGE value="add Dockerfile" />
+    <MESSAGE value="无法连接到 proxy.golang.org 网站,指定代理服务器" />
+    <option name="LAST_COMMIT_MESSAGE" value="无法连接到 proxy.golang.org 网站,指定代理服务器" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

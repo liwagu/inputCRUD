@@ -34,5 +34,6 @@ EXPOSE 8080
 # 运行二进制文件
 CMD ["./inputcrud"]
 
-ARG GOPROXY=https://goproxy.io,direct
+ENV GOPROXY=https://goproxy.cn
+
 
